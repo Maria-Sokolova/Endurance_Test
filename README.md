@@ -23,157 +23,28 @@
 
 Результат: 
 
-[Uploading SafeBrow{
-	"info": {
-		"_postman_id": "bb2e5b2b-706d-4073-bfb1-4d1ac25fe9c9",
-		"name": "SafeBrowsing",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "25548534",
-		"_collection_link": "https://cloudy-station-174388.postman.co/workspace/Safe-Browsing~ca829872-6124-4c85-849c-89924b4846c2/collection/25548534-bb2e5b2b-706d-4073-bfb1-4d1ac25fe9c9?action=share&source=collection_link&creator=25548534"
-	},
-	"item": [
-		{
-			"name": "получение списка",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Cookie",
-						"value": "token_global={{token_global}}",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "{{baseURL}}",
-					"host": [
-						"{{baseURL}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "проверкаURL",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Cookie",
-						"value": "token_global={{token_global}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n            \"threatType\": \"MALWARE\",\r\n            \"platformType\": \"ANY_PLATFORM\",\r\n            \"threatEntryType\": \"URL\"\r\n        }",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://sba.yandex.net/v4/threatMatches:find",
-					"protocol": "https",
-					"host": [
-						"sba",
-						"yandex",
-						"net"
-					],
-					"path": [
-						"v4",
-						"threatMatches:find"
-					],
-					"query": [
-						{
-							"key": null,
-							"value": "40d9595f-997b-4b27-ad1e-a1ee63461dfd",
-							"disabled": true
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "проверкаURL2",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Cookie",
-						"value": "token_global={{token_global}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": " {\r\n            \"threatType\": \"MALWARE\",\r\n            \"platformType\": \"ANY_PLATFORM\",\r\n            \"threatEntryType\": \"URL\"\r\n        }",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://sba.yandex.net/v4/threatMatches:find",
-					"protocol": "https",
-					"host": [
-						"sba",
-						"yandex",
-						"net"
-					],
-					"path": [
-						"v4",
-						"threatMatches:find"
-					],
-					"query": [
-						{
-							"key": null,
-							"value": "40d9595f-997b-4b27-ad1e-a1ee63461dfd",
-							"disabled": true
-						}
-					]
-				}
-			},
-			"response": []
-		}
-	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		}
-	],
-	"variable": [
-		{
-			"key": "token_global",
-			"value": "40d9595f-997b-4b27-ad1e-a1ee63461dfd",
-			"type": "string"
-		},
-		{
-			"key": "baseURL",
-			"value": "https://sba.yandex.net/v4/threatLists",
-			"type": "string"
-		}
-	]
-}sing.postman_collection.json…]()
-
 
 
 
 # задача 2
+Дано: корзина магазина “читай-город”
+
+Необходимо: 
+Составить коллекцию Postman с 4 основными действиями:
+
+Добавление одной единицы товара в корзину.
+
+Изменение количества одного товара в корзине.
+
+Просмотр товаров в корзине.
+
+Удаление товара из корзины.
+
+
+Решение:
+
+Заходим на сайт https://www.chitai-gorod.ru/cart  и открываем консоль разработчика,
+ищем нужный URl и вставляем его в Postman, выполняем запрос на добавление одной единицы товара в корзину, в коллекции создаем запросы изменение количества одного товара в корзине, просмотр товаров в корзине, удаление товара из корзины.
+
+
+
